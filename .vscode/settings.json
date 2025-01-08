@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "my.h": "c",
+        "complex": "c",
+        "renderwindow.h": "c",
+        "fcntl.h": "c",
+        "my_radar.h": "c",
+        "*.tcc": "c",
+        "file.h": "c"
+    }
+}
