@@ -34,7 +34,8 @@ void print_framerate(void)
     }
     elapsed = sfClock_getElapsedTime(clock);
     if (sfTime_asSeconds(elapsed) >= 1) {
-        printf("%3d FPS\n", fps);
+        my_put_nbr(fps);
+        my_putchar('\n');
         fflush(stdout);
         fps = 0;
         sfClock_restart(clock);

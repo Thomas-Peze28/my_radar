@@ -53,12 +53,10 @@ int main(int ac, char **argv)
 {
     all_t ALL;
 
-    printf("nb arg : %d\n", ac);
+    my_put_nbr(ac);
     count_entity(&ALL, argv[1]);
     init(&ALL, argv[1]);
     read_file(&ALL, argv[1]);
-    printf("TOWERS COUNT = %d\n", ALL.simu_info.count_towers);
-    printf("PLANES COUNT = %d\n", ALL.simu_info.count_planes);
     game(&ALL);
     return 0;
 }
