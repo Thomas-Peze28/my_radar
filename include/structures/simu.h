@@ -14,6 +14,7 @@ typedef struct simu_info_s {
     int count_towers;
     int count_planes;
     int show_radius;
+    int show_sprites;
     sfTime elapsed;
     float seconds;
 } simu_info_t;

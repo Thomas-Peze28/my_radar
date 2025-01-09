@@ -14,6 +14,7 @@ SRC	= 	src/main.c	\
 		src/math/vector.c		\
 		src/display/display_planes.c		\
 		src/display/display_towers.c		\
+		src/display/show_option.c		\
 		src/plane/move_planes.c	\
 		src/plane/set_planes.c	\
 		src/tower/set_towers.c	\

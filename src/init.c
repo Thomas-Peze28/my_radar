@@ -12,6 +12,7 @@ void init_info_simu(all_t *ALL, char *pathfile)
 {
     count_entity(ALL, pathfile);
     ALL->simu_info.show_radius = 0;
+    ALL->simu_info.show_sprites = 0;
 }
 
 void init_towers(all_t *ALL)

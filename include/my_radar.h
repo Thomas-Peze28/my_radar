@@ -48,6 +48,9 @@ void display_planes(all_t *ALL);
 void display_tower(all_t *ALL);
 void display_tower_radius(all_t *ALL);
 void display(all_t *ALL, sfClock *clock_move, float seconds);
+void turn_sprite_show(all_t *ALL);
+void turn_hitbox_show(all_t *ALL);
+void show_option(all_t *ALL);
 
 void move_planes(all_t *ALL);
 void set_planes_move(all_t *ALL);

@@ -11,17 +11,8 @@ void analyse_events(all_t *ALL)
 {
     if (WIN.event.type == sfEvtClosed)
         sfRenderWindow_close(WIN.window);
-    if (WIN.event.type == sfEvtKeyPressed
-        && WIN.event.key.code == sfKeyL
-        && ALL->simu_info.show_radius == 1) {
-        ALL->simu_info.show_radius = 0;
-        return;
-    }
-    if (WIN.event.type == sfEvtKeyPressed
-        && WIN.event.key.code == sfKeyL
-        && ALL->simu_info.show_radius == 0) {
-        ALL->simu_info.show_radius = 1;
-        return;
+    if (WIN.event.type == sfEvtKeyPressed) {
+        show_option(ALL);
     }
 }
 
