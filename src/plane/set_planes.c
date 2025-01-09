@@ -10,14 +10,12 @@
 void set_planes_move(all_t *ALL)
 {
     plane_t *plane;
-    sfVector2f vect_dir;
     float distance;
 
     for (int i = 0; i < ALL->simu_info.count_planes; i++) {
         plane = &PLANE_I;
         plane->is_alive = 1;
-        vect_dir = calculate_vector(plane->position, plane->end_pos);
-        distance = calc_dist(vect_dir);
+        distance = calc_dist(plane->position, plane->end_pos);
         if (distance == 0) {
             plane->trajectory = (sfVector2f){0, 0};
             return;

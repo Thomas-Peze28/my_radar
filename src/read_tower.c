@@ -41,10 +41,10 @@ void parse_line(all_t *ALL, const char *line, int t_index, int p_index)
         TOW_ARR.radius = my_atoi(word_array[3]);
     }
     if (word_array[0][0] == 'A') {
-        PLA_ARR.position = (sfVector2i){
+        PLA_ARR.position = (sfVector2f){
             my_atoi(word_array[1]),
             my_atoi(word_array[2])};
-        PLA_ARR.end_pos = (sfVector2i){
+        PLA_ARR.end_pos = (sfVector2f){
             my_atoi(word_array[3]),
             my_atoi(word_array[4])};
         PLA_ARR.speed = my_atoi(word_array[5]);

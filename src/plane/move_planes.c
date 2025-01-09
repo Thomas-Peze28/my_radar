@@ -24,32 +24,31 @@ void reach_dest(plane_t *plane)
     plane->is_alive = 0;
 }
 
-void close_to_dest(plane_t *plane, float distance_restante)
+int close_to_dest(plane_t *plane, float distance_restante)
 {
-    if (distance_restante <= plane->speed * 3) {
+    if (distance_restante <= plane->speed) {
         plane->position = plane->end_pos;
         plane->is_alive = 0;
+        return 1;
     }
+    return 0;
 }
 
 void move_planes(all_t *ALL)
 {
     plane_t *plane;
-    sfVector2f vecteur_directeur;
     float distance_restante;
 
     for (int i = 0; i < ALL->simu_info.count_planes; i++) {
         plane = &PLANE_I;
         if ((int)ALL->simu_info.seconds < plane->delay || !plane->is_alive)
             continue;
-        vecteur_directeur = calculate_vector(plane->position, plane->end_pos);
-        distance_restante = calc_dist(vecteur_directeur);
-        close_to_dest(plane, distance_restante);
+        distance_restante = calc_dist(plane->position, plane->end_pos);
+        if (close_to_dest(plane, distance_restante))
+            continue;
         sfSprite_move(plane->sprite, plane->trajectory);
         sfRectangleShape_move(plane->hitbox, plane->trajectory);
-        plane->position.x += (int)plane->trajectory.x;
-        plane->position.y += (int)plane->trajectory.y;
-        if (has_reach_dest(plane->position, plane->end_pos, plane->trajectory))
-            reach_dest(plane);
+        plane->position.x += plane->trajectory.x;
+        plane->position.y += plane->trajectory.y;
     }
 }

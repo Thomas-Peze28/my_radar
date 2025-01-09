@@ -17,9 +17,9 @@ typedef struct plane_s {
     sfSprite *sprite;
     sfVector2f scale;
     sfIntRect rect;
-    sfVector2i position;
+    sfVector2f position;
     sfVector2f trajectory;
-    sfVector2i end_pos;
+    sfVector2f end_pos;
     sfRectangleShape *hitbox;
     int is_destructible;
     int is_alive;
