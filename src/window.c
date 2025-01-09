@@ -7,6 +7,17 @@
 #include "my.h"
 #include "my_radar.h"
 
+int count_alive(all_t *ALL)
+{
+    int count = 0;
+
+    for (int i = 0; i < ALL->simu_info.count_planes; i++) {
+        if (PLANE_I.is_alive)
+            count++;
+    }
+    return count;
+}
+
 void display(all_t *ALL, sfClock *clock_move, float seconds)
 {
     sfRenderWindow_clear(WIN.window, sfBlack);
@@ -21,6 +32,8 @@ void display(all_t *ALL, sfClock *clock_move, float seconds)
         sfClock_restart(clock_move);
     }
     sfRenderWindow_display(WIN.window);
+    if (count_alive(ALL) == 0)
+        sfRenderWindow_close(WIN.window);
 }
 
 void print_framerate(void)

@@ -66,6 +66,7 @@ void assign_planes_to_zones(corner_t *corners, all_t *ALL);
 
 void set(all_t *ALL);
 void init_clock(all_t *ALL, sfClock *clock);
+int count_alive(all_t *ALL);
 
 void init(all_t *all, char *pathfile);
 void game(all_t *all);
