@@ -62,7 +62,6 @@ int main(int ac, char **argv)
         return 84;
     if (argv[1][1] == 'h')
         return display_help();
-    my_put_nbr(ac);
     count_entity(&ALL, argv[1]);
     init(&ALL, argv[1]);
     read_file(&ALL, argv[1]);
