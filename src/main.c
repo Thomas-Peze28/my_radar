@@ -49,10 +49,28 @@ void game(all_t *ALL)
     sfRenderWindow_destroy(WIN.window);
 }
 
+int display_help(void)
+{
+    write(1, "Air traffic simulation panel\n", 29);
+    write(1, "USAGE\n", 6);
+    write(1, " ./my_radar [OPTIONS] path_to_script\n", 37);
+    write(1, " path_to_script\tThe path to the script file.\n", 45);
+    write(1, "OPTIONS\n", 8);
+    write(1, " -h\t\tprint the usage and quit.\n", 31);
+    write(1, "USER INTERACTIONS\n", 19);
+    write(1, " 'L' key\t\tenable/disable hitboxes and areas.\n", 45);
+    write(1, " 'S' key\t\tenable/disable sprites.\n", 34);
+    return 0;
+}
+
 int main(int ac, char **argv)
 {
     all_t ALL;
 
+    if (ac != 2)
+        return 84;
+    if (argv[1][1] == 'h')
+        return display_help();
     my_put_nbr(ac);
     count_entity(&ALL, argv[1]);
     init(&ALL, argv[1]);

@@ -21,7 +21,6 @@ typedef struct plane_s {
     sfVector2f trajectory;
     sfVector2i end_pos;
     sfRectangleShape *hitbox;
-    sfCircleShape *circle;
     int is_destructible;
     int is_alive;
     int speed;

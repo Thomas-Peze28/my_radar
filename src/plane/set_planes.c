@@ -16,18 +16,14 @@ void set_planes_move(all_t *ALL)
     for (int i = 0; i < ALL->simu_info.count_planes; i++) {
         plane = &PLANE_I;
         plane->is_alive = 1;
-        vect_dir = (sfVector2f){
-        plane->end_pos.x - plane->position.x,
-        plane->end_pos.y - plane->position.y};
+        vect_dir = calculate_vector(plane->position, plane->end_pos);
         distance = calc_dist(vect_dir);
         if (distance == 0) {
             plane->trajectory = (sfVector2f){0, 0};
             return;
         }
-        plane->trajectory = (sfVector2f){
-            (vect_dir.x / distance) * plane->speed,
-            (vect_dir.y / distance) * plane->speed
-        };
+        plane->trajectory = calc_move_vector(plane->position,
+            plane->end_pos, plane->speed);
     }
 }
 
@@ -65,15 +61,5 @@ void set_planes_hitbox(all_t *ALL)
         direction = calculate_vector(PLANE_I.position, PLANE_I.end_pos);
         angle_deg = atan2f(direction.y, direction.x) * (180.0f / 3.14);
         sfRectangleShape_setRotation(PLANE_I.hitbox, angle_deg);
-    }
-}
-
-void set_planes_circle(all_t *ALL)
-{
-    for (int i = 0; i < ALL->simu_info.count_planes; i++) {
-        PLANE_I.circle = create_circle((sfVector2f){
-            (float)PLANE_I.position.x,
-            (float)PLANE_I.position.y},
-            15);
     }
 }

@@ -13,6 +13,5 @@ void set(all_t *ALL)
     set_towers_radius(ALL);
     set_planes_sprite(ALL);
     set_planes_hitbox(ALL);
-    set_planes_circle(ALL);
     set_planes_move(ALL);
 }

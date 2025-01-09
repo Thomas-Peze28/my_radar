@@ -36,7 +36,6 @@ void print_framerate(void)
     if (sfTime_asSeconds(elapsed) >= 1) {
         my_put_nbr(fps);
         my_putchar('\n');
-        fflush(stdout);
         fps = 0;
         sfClock_restart(clock);
     } else

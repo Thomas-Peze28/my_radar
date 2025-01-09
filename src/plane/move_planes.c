@@ -47,7 +47,6 @@ void move_planes(all_t *ALL)
         close_to_dest(plane, distance_restante);
         sfSprite_move(plane->sprite, plane->trajectory);
         sfRectangleShape_move(plane->hitbox, plane->trajectory);
-        sfCircleShape_move(plane->circle, plane->trajectory);
         plane->position.x += (int)plane->trajectory.x;
         plane->position.y += (int)plane->trajectory.y;
         if (has_reach_dest(plane->position, plane->end_pos, plane->trajectory))

@@ -29,6 +29,5 @@ void display_tower_radius(all_t *ALL)
         if (!plane->is_alive)
             continue;
         sfRenderWindow_drawRectangleShape(WIN.window, PLANE_I.hitbox, NULL);
-        sfRenderWindow_drawCircleShape(WIN.window, PLANE_I.circle, NULL);
     }
 }

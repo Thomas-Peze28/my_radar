@@ -1,11 +1,29 @@
 ##
 ## EPITECH PROJECT, 2024
-## makefile pong seb
+## makefile
 ## File description:
 ## makfile
 ##
 
-SRC     = $(wildcard src/*.c src/*/*.c)
+SRC	= 	src/main.c	\
+		src/window.c	\
+		src/init.c	\
+		src/set.c		\
+		src/read_tower.c		\
+		src/init_clock.c		\
+		src/math/vector.c		\
+		src/display/display_planes.c		\
+		src/display/display_towers.c		\
+		src/plane/move_planes.c	\
+		src/plane/set_planes.c	\
+		src/tower/set_towers.c	\
+		src/shape/collide.c	\
+		src/shape/shape.c		\
+		src/zones/assign_planes.c		\
+		src/zones/destroy_zones.c		\
+		src/zones/get_zone.c		\
+		src/zones/init_zones.c	\
+		src/zones/is_in_zone.c	\
 
 NAME	=	my_radar
 
