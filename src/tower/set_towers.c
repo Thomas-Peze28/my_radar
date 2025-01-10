@@ -30,6 +30,6 @@ void set_towers_radius(all_t *ALL)
         TOWER_I.circle = create_circle((sfVector2f){
             (float)TOWER_I.position.x,
             (float)TOWER_I.position.y},
-            (float)TOWER_I.radius * 10);
+            (float)TOWER_I.radius);
     }
 }

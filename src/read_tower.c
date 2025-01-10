@@ -35,7 +35,7 @@ void parse_line(all_t *ALL, const char *line, int t_index, int p_index)
     char **word_array = my_str_to_word_array02(line, ' ');
 
     if (word_array[0][0] == 'T') {
-        TOW_ARR.position = (sfVector2i){
+        TOW_ARR.position = (sfVector2f){
             my_atoi(word_array[1]),
             my_atoi(word_array[2])};
         TOW_ARR.radius = my_atoi(word_array[3]);

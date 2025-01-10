@@ -15,13 +15,14 @@ void set_planes_move(all_t *ALL)
     for (int i = 0; i < ALL->simu_info.count_planes; i++) {
         plane = &PLANE_I;
         plane->is_alive = 1;
+        PLANE_I.is_destructible = 1;
         distance = calc_dist(plane->position, plane->end_pos);
         if (distance == 0) {
             plane->trajectory = (sfVector2f){0, 0};
             return;
         }
         plane->trajectory = calc_move_vector(plane->position,
-            plane->end_pos, plane->speed);
+            plane->end_pos, plane->speed * 0.016f);
     }
 }
 

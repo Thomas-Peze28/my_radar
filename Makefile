@@ -18,6 +18,7 @@ SRC	= 	src/main.c	\
 		src/plane/move_planes.c	\
 		src/plane/set_planes.c	\
 		src/tower/set_towers.c	\
+		src/tower/is_plane_in_zone.c	\
 		src/shape/collide.c	\
 		src/shape/shape.c		\
 		src/zones/assign_planes.c		\

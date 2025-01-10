@@ -18,12 +18,6 @@ int has_reach_dest(sfVector2i position, sfVector2i end_pos, sfVector2f traject)
     return 0;
 }
 
-void reach_dest(plane_t *plane)
-{
-    plane->position = plane->end_pos;
-    plane->is_alive = 0;
-}
-
 int close_to_dest(plane_t *plane, float distance_restante)
 {
     if (distance_restante <= plane->speed) {

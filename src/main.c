@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2024
 ** main.c
 ** File description:
-** main for my_hunters
+** main for my_radar
 */
 #include "my.h"
 #include "my_radar.h"
@@ -24,8 +24,7 @@ void game(all_t *ALL)
     sfTime time_move;
     float seconds;
 
-    initialize_zones(zones);
-    set(ALL);
+    set(ALL, zones);
     while (sfRenderWindow_isOpen(WIN.window)) {
         time_move = sfClock_getElapsedTime(clock_move);
         seconds = time_move.microseconds / 100000.0f;
@@ -35,6 +34,7 @@ void game(all_t *ALL)
         assign_planes_to_zones(zones, ALL);
         init_clock(ALL, clock);
         print_framerate();
+        collide(ALL);
         display(ALL, clock_move, seconds);
     }
     sfRenderWindow_destroy(WIN.window);

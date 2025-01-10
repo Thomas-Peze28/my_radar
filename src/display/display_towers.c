@@ -26,7 +26,7 @@ void display_tower_radius(all_t *ALL)
     }
     for (int i = 0; i < ALL->simu_info.count_planes; i++) {
         plane = &PLANE_I;
-        if (!plane->is_alive)
+        if (!plane->is_alive || ALL->simu_info.seconds < plane->delay)
             continue;
         sfRenderWindow_drawRectangleShape(WIN.window, PLANE_I.hitbox, NULL);
     }

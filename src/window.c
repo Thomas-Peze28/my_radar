@@ -22,11 +22,11 @@ void display(all_t *ALL, sfClock *clock_move, float seconds)
 {
     sfRenderWindow_clear(WIN.window, sfBlack);
     sfRenderWindow_drawSprite(WIN.window, WIN.bg_sprite, NULL);
+    display_tower_radius(ALL);
     if (ALL->simu_info.show_sprites == 0) {
         display_tower(ALL);
         display_planes(ALL);
     }
-    display_tower_radius(ALL);
     if (seconds > 0.1f) {
         move_planes(ALL);
         sfClock_restart(clock_move);

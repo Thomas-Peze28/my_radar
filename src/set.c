@@ -7,8 +7,9 @@
 #include "my.h"
 #include "my_radar.h"
 
-void set(all_t *ALL)
+void set(all_t *ALL, corner_t *zones)
 {
+    initialize_zones(zones);
     set_towers_sprite(ALL);
     set_towers_radius(ALL);
     set_planes_sprite(ALL);

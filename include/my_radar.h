@@ -58,13 +58,16 @@ void set_planes_sprite(all_t *ALL);
 void set_planes_hitbox(all_t *ALL);
 void set_planes_circle(all_t *ALL);
 void planes_collides(all_t *ALL);
+void plane_detructible_update(all_t *ALL);
+void collide(all_t *ALL);
 
 void set_towers_sprite(all_t *ALL);
 void set_towers_radius(all_t *ALL);
 
 void assign_planes_to_zones(corner_t *corners, all_t *ALL);
+void color_with_zone(all_t *ALL);
 
-void set(all_t *ALL);
+void set(all_t *ALL, corner_t *zones);
 void init_clock(all_t *ALL, sfClock *clock);
 int count_alive(all_t *ALL);
 
